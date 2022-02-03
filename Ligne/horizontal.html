@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+   <title>Images défilantes (scrolling images)</title>
+   <script type="text/javascript">
+   //<![CDATA[
+      var pag=["Aihole","Badami","Belur","Halebid","Hampi","Haveri","Lakkundi","Pattadakal","Somnathpur"];
+      var tim=50;  // temps de pause en millisecondes entre les appels à Nxt
+      var wIm=160; // largeur en pixels des images
+      var hIm=120; // hauteur en pixels des images
+      var dIm=6;   // espace en pixels entre les images défilantes
+      var wZn=600; // largeur de la zone des images défilantes
+      var pas=2;   // décalage des images à chaque appel à la fonction Nxt
+      
+      var tmr,nIm=pag.length; // timer et nombre d'images
+      var wTt=nIm*(wIm+dIm);  // largeur totale des images
+      var xNx=hIm;            // est décrémenté de 'pas' à chaque appel à Nxt
+
+      function Nxt() {
+         var i,x=xNx;
+         for (i=0; i<nIm; i++){
+            if (x-wIm<=wZn) document.getElementById('im'+i).style.left=(x-wIm)+'px';
+            if ((x+=wIm+dIm) >= wTt) x -= wTt;
+         }
+         if ((xNx-=pas) < 0) xNx += wTt;
+      }
+      
+      function Clk(i) { // à remplacer par vos propres 'actions'
+         window.open('Pag/'+pag[i]+'.html','_self');
+      }
+
+      function Ini() { // dans body, ajustez également la position absolue du div:id='imd'
+         var i,s='',e=document.getElementById('imd');
+         for (i=0; i < nIm; i++) s += "<img id='im"+i+"' onclick='Clk("+i+")' title='"+pag[i]
+            +"' style='position:absolute; left:9999px; top:0px; cursor: pointer;' src='Img/"+pag[i]+".jpg'/>";
+         e.style.width=wZn+'px'; e.style.height=hIm+'px'; e.innerHTML=s;
+         // les 3 lignes suivantes ne sont pas indispensables
+         s="<span style='color:red;'>Selection par le nom:</span>";
+         for (i=0; i < nIm; i++) s += "<br/><a href='Pag/"+pag[i]+".html'>"+pag[i]+"</a>";
+         window.document.getElementById('lsN').innerHTML=s;         
+      }
+   //]]>
+   </script>
+</head>
+
+<body style='background-color:#BBBBBB;' onload='Ini(); tmr=setInterval("Nxt()",tim);'>
+   <div id='imd' style='position:absolute; left:60px; top:50px; overflow:hidden;'
+      onmouseover='clearInterval(tmr)' onmouseout='tmr=setInterval("Nxt()",tim)'>
+   </div>
+   <!-- la suite n'est pas indispensable et sert juste d'exemple -->
+   <div style='float:left; width:99px; height:216px; padding:400px 6px 6px 6px; background-color:#CCCCCC;'>
+      <hr />Obtenez<br/>les<br/>exemples<br/>complets<br/>horizontal<br/>et<br/>vertical:<br/><br/> &nbsp;
+      <a href='http://www.william-voirol.ch/Prog/ImagesDefilantes/Ligne.zip'>Zip</a>
+   </div>
+   <div style='float:left; padding-left:20px;'>
+      <p style='font-size:18px; color:blue;'>Quelques temples du Karnataka en Inde</p>
+      <div id='lsN' style='width:160px; height:110px; background-color:#FFFFDD;
+         padding-left:4px; margin:140px 0px 0px 80px; overflow:auto;'></div> <!-- contient la liste de noms -->
+      <div style='color:green;'>
+         <br/>Les temples de l'Inde vous intéressent ? : &nbsp;
+         <a href='http://www.william-voirol.ch'>Splendeur de l'Inde</a>
+      </div>
+      <hr />
+      <p style='font-size:24px;'>Images défilantes (scrolling images)</p>
+      <p>
+         -  Nouvelle version (27 juillet 2011).<br/>
+         -  La zone des images défilantes peut être placée librement.<br/>
+         -  Toutes les images ont la même dimension.<br/>
+         -  Choix du nombre d'images et de l'espace entre les images.<br/>
+         -  La vitesse de défilement dépend des variables 'tim' et 'pas'.<br/>
+         -  Le mouvement s'arrête lorsque la souris survole les images.<br/>
+         -  Il est possible d'associer une action au "click" sur une image:<br/>
+            &nbsp; &nbsp; &nbsp; l'exemple proposé ouvre une page correspondant à l'image.
+      </p>
+      <p style='color:red;'>
+         Testé avec les navigateurs:<br/>
+         Internet Explorer 8 et 9, Firefox 5, Navigator 9,<br/>
+         Google Chrome 11, Opera 11, Safari 5.
+      </p>
+   </div>
+</body>
+</html>

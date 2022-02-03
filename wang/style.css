@@ -1,0 +1,15 @@
+input[type=text]
+{
+	width :25%;
+	padding:12px 11px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: none;
+	border-bottom:1px solid black;
+	outline:none;
+	-webkit-appearance:none;
+	outline: none;
+}
+.field{
+	display:flex;
+}

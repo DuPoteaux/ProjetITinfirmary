@@ -1,0 +1,54 @@
+IMAGES DÉFILANT VERTICALEMENT (SCROLLING IMAGES)
+
+
+Mots clés:
+==========
+
+image, défilante, scrolling, javascript, parade, vertical
+
+
+
+Description:
+============
+
+Nouvelle version.
+
+Quelques lignes en JavaScript suffisent pour introduire dans votre site web des images défilant verticalement.
+La zone contenant ces images peut être librement placée et dimensionnée.
+
+Toutes les images ont la même dimension.
+
+On peut choisir le nombre d'images et de l'espace entre les images.
+La vitesse de défilement dépend des variables 'tim' et 'pas'.
+
+Il est possible d'associer une action au "click" sur une image: l'exemple proposé ouvre une page correspondant à l'image.
+
+L'exemple proposé est rudimentaire pour bien mettre en évidence les notions utilisées.
+Adaptez et introduisez-le à votre propre site !
+
+Cette nouvelle version est une simplification de l'ancienne. De plus, la zone des images défilantes peut être plus librement placée et dimensionnée.
+
+
+
+Conclusion:
+===========
+
+Peut-on faire plus simplement ?
+
+Faites directement un test:
+  http://www.william-voirol.ch/Prog/ImagesDefilantes/Ligne/horizontal.html
+  http://www.william-voirol.ch/Prog/ImagesDefilantes/Ligne/vertical.html
+
+Remarque: de temps en temps, des espaces (caractères blancs) s'immiscent dans certains textes. (CodeS- SourceS est au courant du problème).
+Si c'était le cas ici, enlevez les espaces avant d'utiliser les adresses Web ci-dessus.
+
+Le programme proposé devrait fonctionner avec tous les navigateurs courants.
+
+Deux exemples (horizontal et vertical) avec quelques images se trouve sur le fichier zip.
+
+
+Mises à jour:
+=============
+
+2011.08.15  Simplification et mise à jour d'adresses Web.
+2011.08.22  Mise à jour d'adresses Web

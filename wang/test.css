@@ -1,0 +1,77 @@
+$color:#4ba6a3;
+
+body{
+	font-family: Roboto;
+	font-size:16px;
+	color:#212121;
+}
+.field{
+	position:relative;
+	height:72px;
+	padding:16px 0 8px 0;
+}
+.field-label{
+	position: relative;
+	margin:0;
+	display: block;
+
+	color:#bfbfbf;
+	line-height: 16px;
+	font-size:16px;
+	font-weight:400;
+	display: block;
+
+	transform: translateY(24px);
+	transition: transform 0.3s, color 0.3s;
+	transform-origin: 0.50%;
+}
+.field-input{
+	position:relative;
+	display:black;
+	width:100%;
+	height:32px;
+	padding: 8px 0;
+
+	line-height: 16px;
+	font-family:Roboto;
+	font-size:16px;
+
+	background:transparent;
+	border:none;
+	-webkit-appearance:none;
+	outline:none;
+}
+
+.field::.after,.field::.before{
+	content:'';
+	height: 2px;
+	width:100%;
+	position:absolute;
+	bottom:6px;
+	left:0;
+
+	background-color: #e6e6e6;
+}
+.field::after{
+	background-color: #2195f2;
+	transform: scaleX(0);
+	transition: transform 0.3s;
+}
+.has-label .field-label{
+	transform: translateY(0) scale(0.75);
+}
+.is-focused .field-label{
+	
+	color:#2195f2;
+}
+.field.is-focused::after{
+	transform: scaleX(1);
+}
+
+.field.erro .field-label{
+	color:#e74c3c;
+}
+.field.error::.after{
+	background-color:#e74c3c;
+}
+ 
